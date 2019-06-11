@@ -14,6 +14,15 @@
           <li><strong>Balances do not show staked funds.</strong><p>If you have been staking, please send the funds to a new address for them to register.</p></li>
         </ul>
       </div>
+      <div id="order-form-tooltip" class="tip-message">
+        <h2>Order Form</h2>
+        <ul>
+          <li><strong>Block DX uses "Exact" orders.</strong><p>At the moment Block DX does not support partial order fills. It uses what is called "Exact" orders, meaning that an order must be taken for the full amount. If you are a taker, multiple orders cannot be combined and taken as a single order with this order type. If you are a maker, you may want to place multiple smaller orders instead of one large order. Market and Limit orders will be supported in a future release.</p></li>
+          <li><strong>Balances only show available funds.</strong><p>If UTXOs are locked in the wallet, or used in trades, then they will not count towards the balance.</p></li>
+          <li><strong>Balances only show funds in legacy addresses.</strong><p>If you are using a Segwit address, please create a new address to send the funds to. A legacy address will automatically be created when generating a new address.</p></li>
+          <li><strong>Balances do not show staked funds.</strong><p>If you have been staking, please send the funds to a new address for them to register.</p></li>
+        </ul>
+      </div>
     </div>
 
 
@@ -32,7 +41,11 @@
           </bn-card>
 
           <bn-card class="trade_table__cell orderform col-lg-12" [class.alternate-pricing]="pricingEnabled" [allowFullscreen]="false">
-            <bn-card-title>Order Form</bn-card-title>
+            <bn-card-title>
+              <span>Order Form
+                <i class="material-icons tooltip-icon" (mouseenter)="tooltip('order-form-tooltip', 'block')" (mouseleave)="tooltip('order-form-tooltip', 'none')">help</i>
+              </span>
+            </bn-card-title>
             <bn-card-body>
               <app-orderform></app-orderform>
             </bn-card-body>
