@@ -278,4 +278,16 @@ export class PairSelectorComponent implements OnInit, AfterViewInit {
     this.active = false;
   }
 
+  refreshBalances() {
+    let table = document.querySelector(".pair-container .ps-content") as HTMLElement;
+    let button = document.querySelector(".pair-container .refresh-wallets-button") as HTMLElement;
+    table.style.display = 'none';
+    button.style.display = 'none';
+    window.electron.ipcRenderer.send('refreshBalances');
+    setTimeout(function () {
+      table.style.display = 'block';
+      button.style.display = 'block';
+    }, 400);
+  }
+
 }

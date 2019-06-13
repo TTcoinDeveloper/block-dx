@@ -15,7 +15,7 @@ const renderIntroduction = () => {
           <div class="section-header-text">Connected Wallets</div><div class="section-header-line"></div>
         </div>
         <p>
-          Since trading is peer-to-peer, you must have the wallet of each asset being traded installed, synced, and configured. Configuration was done when starting Block DX the first time, but you can reconfigure to add new wallets for trading using the Basic Setup menu link.
+          Since trading is peer-to-peer, you must have the wallet of each asset being traded installed, synced, and configured. Configuration was done when starting Block DX the first time, but you can add or update wallets for trading by selecting the Add & Update Wallets link from the sidebar menu.
         </p>
       </div>
       <div class="section">

@@ -55,4 +55,9 @@ export class MainviewComponent implements OnInit {
     this.orderbookService.setPriceDecimal(num);
   }
 
+  tooltip(id, displayType) {
+    document.getElementById('tip-panel').style.display = displayType;
+    document.getElementById(id).style.display = displayType;
+  }
+
 }
