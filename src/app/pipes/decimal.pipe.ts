@@ -22,13 +22,6 @@ export class NumberFormatPipe implements PipeTransform {
 
     if(decMax === 0) return int;
 
-    if(dec.length < decMin) {
-      for(let i = 0; i < decMin - decLen; i++) {
-        dec = dec + '0';
-      }
-    } else {
-      dec = dec.slice(0, decMax);
-    }
-    return int + '.' + dec;
+    return Number(int + '.' + dec).toFixed(decMax);
   }
 }

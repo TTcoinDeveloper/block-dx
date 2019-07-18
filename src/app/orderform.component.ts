@@ -83,7 +83,7 @@ export class OrderformComponent implements OnInit {
       .subscribe((order) => {
         const id = order[2];
         const amount = this.formatNumber(String(order[1]), this.symbols[0]);
-        const totalPrice = this.formatNumber(String(math.multiply(bignumber(order[0]), bignumber(order[1]))), this.symbols[1]);
+        const totalPrice = this.formatNumber(order[5], this.symbols[1]);
         const type = order[4] === 'ask' ? 'buy' : 'sell';
         this.onOrderSubmit(id, amount, totalPrice, type);
       });
@@ -98,7 +98,7 @@ export class OrderformComponent implements OnInit {
           this.model = Object.assign(this.model, {
             id: order[2],
             amount: this.formatNumber(String(order[1]), this.symbols[0]),
-            totalPrice: this.formatNumber(String(math.multiply(bignumber(order[0]), bignumber(order[1]))), this.symbols[1]),
+            totalPrice: this.formatNumber(order[5], this.symbols[1]),
             price: this.formatNumber(String(order[0]), this.symbols[1]),
             secondPrice
             // totalPrice: this.formatNumber(String(order[0] * order[1]), this.symbols[1])
